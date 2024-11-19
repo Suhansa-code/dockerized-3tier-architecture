@@ -1,0 +1,43 @@
+version: '3.8' # Specify the Docker Compose file format version
+
+services:
+  frontend:
+    build:
+      context: ./Frontend # Specify the build context for the frontend service
+      dockerfile: Dockerfile # Dockerfile used to build the frontend image
+    ports:
+      - "80:80" # Map container port 80 to host port 80 for frontend access
+    depends_on:
+      - backend # Ensure the backend service starts before the frontend
+    networks:
+      - frontend_network # Attach the frontend to the frontend network
+
+  backend:
+    build:
+      context: ./Backend # Specify the build context for the backend service
+      dockerfile: Dockerfile # Dockerfile used to build the backend image
+    ports:
+      - "3000:3000" # Map container port 3000 to host port 3000 for backend access
+    depends_on:
+      - database # Ensure the database service starts before the backend
+    environment:
+      - MONGO_URI=mongodb://database:27017 # Environment variable for database connection
+    networks:
+      - backend_network # Attach the backend to the backend network
+      - frontend_network # Enable communication with the frontend service
+
+  database:
+    image: mongo # Use the official MongoDB image
+    volumes:
+      - mongo_data:/data/db # Persist MongoDB data using a named volume
+    networks:
+      - backend_network # Attach the database to the backend network
+    ports:
+      - "27017:27017" # Map container port 27017 to host port 27017 for database access
+
+volumes:
+  mongo_data: # Named volume for persisting MongoDB data
+
+networks:
+  frontend_network: # Network for frontend-backend communication
+  backend_network: # Network for backend-database communication
