@@ -13,12 +13,14 @@
    ```bash
    git clone <repository-link>
    cd <repository-directory>```
+   
 2. **Build and Run Containers**
 
 Run the following command to build and start all services:
 
 ```bash
-docker-compose up --build```
+docker-compose up --build
+```
 
 
 * This will:
@@ -38,6 +40,7 @@ Stop running containers gracefully:
 ```bash
 Copy code
 docker-compose down
+```
 
 This will also remove any temporary containers and networks created during the session.
 
