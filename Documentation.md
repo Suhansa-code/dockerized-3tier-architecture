@@ -57,8 +57,7 @@ This will also remove any temporary containers and networks created during the s
 - **Backend**: Exposed on port `3000` (mapped to container port `3000`).
 - **Database**: Exposed on port `27017` (mapped to container port `27017`).
 
-### Security Settings
-- Database credentials are set via the `MONGO_URI` environment variable in the backend service.
+
 
 
 ## 3. Troubleshooting Guide
@@ -81,8 +80,7 @@ This will also remove any temporary containers and networks created during the s
      ```bash
      docker-compose logs backend
      ```
-   - Confirm that the `MONGO_URI` environment variable is correctly configured in the backend service.
-
+   
 4. **Database Connection Issues**:
    - Verify the database service is running:
      ```bash
