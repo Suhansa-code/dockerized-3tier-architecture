@@ -13,12 +13,12 @@
    ```bash
    git clone <repository-link>
    cd <repository-directory>'''
-2. ***Build and Run Containers***
+2. **Build and Run Containers**
 
 Run the following command to build and start all services:
 
 ```bash
-docker-compose up --build
+docker-compose up --build'''
 
 
 * This will:
