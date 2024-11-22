@@ -13,13 +13,15 @@
    ```bash
    git clone <repository-link>
    cd <repository-directory>'''
-Build and Run Containers:
+2. ***Build and Run Containers***
 
 Run the following command to build and start all services:
+
 ```bash
-Copy code
-docker-compose up --build'''
-This will:
+docker-compose up --build
+
+
+* This will:
 Build Docker images for the frontend and backend.
 Pull the MongoDB image for the database.
 Start all services and connect them to the appropriate networks.
