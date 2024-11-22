@@ -16,7 +16,7 @@
 Build and Run Containers:
 
 Run the following command to build and start all services:
-'''bash
+```bash
 Copy code
 docker-compose up --build'''
 This will:
