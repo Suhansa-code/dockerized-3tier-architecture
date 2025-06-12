@@ -5,7 +5,7 @@ FROM node:16 AS builder
 WORKDIR /frontend
 
 # Copy package files to the container to install dependencies
-COPY package*.json ./
+COPY frontend/package*.json ./
 
 # Install project dependencies
 RUN npm install
